@@ -9,9 +9,23 @@ export default function Index() {
     const [todo, setTodo] = useState('');
     const [todoArray, setTodoList] = useState([]);
 
+    useEffect(() => {
+        console.log(inputArray);
+    }, [inputArray]);
+
     return (
         <div className='index-container'>
-
+            <InputForm
+                inputText={inputText}
+                setInputText={setInputText}
+                inputArray={inputArray}
+                setInputArray={setInputArray}
+            />
+            <TodoList
+                inputArray={inputArray}
+                todo={todo}
+                todoArray={todoArray}
+            />
         </div>
     )
 }
