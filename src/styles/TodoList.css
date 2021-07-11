@@ -1,0 +1,44 @@
+.todo-container {
+  margin: 1rem 0;
+  z-index: 999;
+}
+
+.todo-wrapper {
+  background-color: #fcfcfc;
+  width: 40%;
+  margin: auto;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.todo-text-container {
+  flex-grow: 1;
+}
+
+.todo-delete-container {
+  padding: 0.5rem;
+  border: none;
+  background-color: #fcfcfc;
+  cursor: pointer;
+}
+
+.todo-delete-icon {
+  color: #ec0505;
+  font-size: 1.5rem;
+}
+
+.todo-done-container {
+  padding: 0.5rem;
+  background: #119723;
+  border-radius: 0.5rem;
+  margin-left: 0.7rem;
+  border: none;
+  cursor: pointer;
+}
+
+.todo-done-icon {
+  color: #ffffff;
+  font-size: 1.5rem;
+}

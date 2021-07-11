@@ -1,18 +1,18 @@
-import React from 'react'
-import '../styles/TodoList.css'
+import React, { useEffect } from 'react'
+import TodoObject from './TodoObject.js';
 
-export default function TodoList({ inputArray, todo, todoArray }) {
-
-    console.log(inputArray);
+export default function TodoList({ inputArray, setInputArray }) {
 
     return (
-        <div>
+        <div >
             {inputArray.map((item, index) =>
-                <div key={index} >
-                    <div>{item.text}</div>
-                    <div>{item.id}</div>
-                </div>
+                <TodoObject
+                    key={index}
+                    inputArray={inputArray}
+                    setInputArray={setInputArray}
+                    item={item}
+                />
             )}
-        </div>
+        </div >
     )
 }

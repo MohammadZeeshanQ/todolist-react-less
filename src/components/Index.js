@@ -7,10 +7,10 @@ export default function Index() {
     const [inputText, setInputText] = useState('');
     const [inputArray, setInputArray] = useState([]);
     const [todo, setTodo] = useState('');
-    const [todoArray, setTodoList] = useState([]);
+    const [todoArray, setTodoArray] = useState([]);
 
     useEffect(() => {
-        console.log(inputArray);
+        console.log(inputArray)
     }, [inputArray]);
 
     return (
@@ -21,10 +21,10 @@ export default function Index() {
                 inputArray={inputArray}
                 setInputArray={setInputArray}
             />
+
             <TodoList
                 inputArray={inputArray}
-                todo={todo}
-                todoArray={todoArray}
+                setInputArray={setInputArray}
             />
         </div>
     )
