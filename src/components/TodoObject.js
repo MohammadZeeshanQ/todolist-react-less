@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import '../styles/TodoList.css'
 
 
 export default function TodoObject({ item, inputArray, setInputArray }) {
 
+    const [statusIcon, setStatusIcon] = useState('todo-done-icon');
+
+    useEffect(() => {
+
+    }, [setInputArray]);
 
     const deleteHandler = () => {
 
@@ -15,7 +20,13 @@ export default function TodoObject({ item, inputArray, setInputArray }) {
 
 
     const completeHandler = () => {
+
         console.log('completeHandler');
+
+        // complete indicator
+        changeButtonStatus();
+
+        // change complete Status
         setInputArray(inputArray.map((element) => {
             if (element.id === item.id) {
                 return {
@@ -24,8 +35,24 @@ export default function TodoObject({ item, inputArray, setInputArray }) {
                 }
             }
             return element;
-        }))
+        }));
     };
+
+
+    const changeButtonStatus = () => {
+        if (statusIcon === 'todo-done-icon') {
+            setStatusIcon('todo-done-icon-done');
+            console.log('done');
+        }
+        else if (statusIcon === 'todo-done-icon-done') {
+            setStatusIcon('todo-done-icon');
+            console.log('undone');
+        }
+        else {
+            setStatusIcon('todo-done-icon');
+            console.log(3);
+        }
+    }
 
 
     return (
@@ -33,18 +60,19 @@ export default function TodoObject({ item, inputArray, setInputArray }) {
             <div className='todo-wrapper' >
 
                 <div className='todo-text-container'>
-                    {item.text}
-                </div>
-                <div className='todo-text-container'>
-                    {item.id}
+                    <h4 style={{ color: '#009FFD' }}>
+                        {item.text}
+                    </h4>
                 </div>
 
                 <button className='todo-delete-container' onClick={deleteHandler}>
                     <i className="far fa-trash-alt todo-delete-icon"></i>
                 </button>
 
-                <button className='todo-done-container' onClick={completeHandler}>
-                    <i className="fas fa-check todo-done-icon"></i>
+                <button className='todo-done-container'
+                    onClick={completeHandler}
+                >
+                    <i className={`fas fa-check ${statusIcon}`}></i>
                 </button>
 
             </div>

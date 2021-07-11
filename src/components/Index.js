@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import InputForm from './InputForm.js'
 import TodoList from './TodoList.js'
-import '../styles/Index.css'
+import '../styles/IndexSecond.css'
 
 export default function Index() {
     const [inputText, setInputText] = useState('');
@@ -15,6 +15,11 @@ export default function Index() {
 
     return (
         <div className='index-container'>
+
+            <div className='hero-header' style={{ textAlign: 'center', paddingTop: '4rem ', }}>
+                <h1 style={{ color: '#fcfcfc' }}>Todo List</h1>
+            </div>
+
             <InputForm
                 inputText={inputText}
                 setInputText={setInputText}

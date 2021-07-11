@@ -1,6 +1,6 @@
 .index-container {
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  padding: 0 0 35rem 0;
   background-color: #2a2a72;
   background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
 }
