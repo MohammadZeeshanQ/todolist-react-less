@@ -10,10 +10,18 @@
   align-items: center;
 }
 
+.form-div {
+  background-color: #fcfcfc;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+}
+
 .form-input {
   width: 20rem;
   border-radius: 0.5rem;
-  margin-right: 0.5rem;
+  /* margin-right: 0.5rem; */
   padding: 1rem 0 1rem 0.5rem;
   border: none;
   font-size: 1rem;
@@ -25,11 +33,30 @@
 }
 
 .form-submit {
-  font-size: 1rem;
-  height: 2.8rem;
-  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  color: #fcfcfc;
+  background-color: #009ffd;
   border: none;
+  border-radius: 50%;
+  padding: 0.7rem 0.9rem;
+  cursor: pointer;
+}
+
+.form-dropDown-container {
+  margin-left: 2rem;
+}
+
+.form-dropDown {
+  background-color: #fcfcfc;
+  color: #009ffd;
   border-radius: 0.5rem;
+  padding: 1rem;
+  border: none;
+  font-size: 1rem;
+}
+
+.form-dropDown-option {
+  margin: 0.5rem;
 }
 
 @media screen and (max-width: 600px) {

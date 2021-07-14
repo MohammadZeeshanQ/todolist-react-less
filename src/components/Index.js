@@ -6,12 +6,15 @@ import '../styles/IndexSecond.css'
 export default function Index() {
     const [inputText, setInputText] = useState('');
     const [inputArray, setInputArray] = useState([]);
-    const [todo, setTodo] = useState('');
+    const [taskStatus, setTaskStatus] = useState('all');
     const [todoArray, setTodoArray] = useState([]);
 
+
     useEffect(() => {
-        console.log(inputArray)
-    }, [inputArray]);
+        console.log(inputArray);
+        console.log(taskStatus);
+    }, [inputArray, taskStatus]);
+
 
     return (
         <div className='index-container'>
@@ -25,6 +28,7 @@ export default function Index() {
                 setInputText={setInputText}
                 inputArray={inputArray}
                 setInputArray={setInputArray}
+                setTaskStatus={setTaskStatus}
             />
 
             <TodoList
