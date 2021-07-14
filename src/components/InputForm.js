@@ -8,7 +8,7 @@ export default function InputForm({ inputText, setInputText, inputArray, setInpu
         e.preventDefault();
         setInputArray([
             ...inputArray,
-            { text: inputText, completed: false, id: parseInt(Math.random() * 1000), }
+            { text: inputText, status: false, id: parseInt(Math.random() * 1000), }
         ]);
         setInputText('');
     };

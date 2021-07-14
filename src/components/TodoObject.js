@@ -2,57 +2,39 @@ import React, { useState, useEffect } from 'react'
 import '../styles/TodoList.css'
 
 
-export default function TodoObject({ item, inputArray, setInputArray }) {
+export default function TodoObject({ item, inputArray, setInputArray, taskArray }) {
 
-    const [statusIcon, setStatusIcon] = useState('todo-done-icon');
+    const [complete, setComplete] = useState(false);
 
-    useEffect(() => {
 
-    }, [setInputArray]);
-
+    // delete Task
     const deleteHandler = () => {
 
-        console.log('deleteHandler');
         setInputArray(inputArray.filter((element) =>
             element.id !== item.id
         ))
     };
 
 
+    // completed Task 
     const completeHandler = () => {
 
-        console.log('completeHandler');
-
         // complete indicator
-        changeButtonStatus();
+        setComplete(!complete);
 
         // change complete Status
         setInputArray(inputArray.map((element) => {
             if (element.id === item.id) {
                 return {
                     ...element,
-                    completed: !element.completed
+                    status: !element.status
                 }
             }
             return element;
         }));
+
     };
 
-
-    const changeButtonStatus = () => {
-        if (statusIcon === 'todo-done-icon') {
-            setStatusIcon('todo-done-icon-done');
-            console.log('done');
-        }
-        else if (statusIcon === 'todo-done-icon-done') {
-            setStatusIcon('todo-done-icon');
-            console.log('undone');
-        }
-        else {
-            setStatusIcon('todo-done-icon');
-            console.log(3);
-        }
-    }
 
 
     return (
@@ -72,7 +54,11 @@ export default function TodoObject({ item, inputArray, setInputArray }) {
                 <button className='todo-done-container'
                     onClick={completeHandler}
                 >
-                    <i className={`fas fa-check ${statusIcon}`}></i>
+                    <i className={item.status
+                        ?
+                        `fas fa-check todo-done-icon-done`
+                        :
+                        `fas fa-check todo-done-icon`}></i>
                 </button>
 
             </div>

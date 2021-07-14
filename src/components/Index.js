@@ -7,13 +7,32 @@ export default function Index() {
     const [inputText, setInputText] = useState('');
     const [inputArray, setInputArray] = useState([]);
     const [taskStatus, setTaskStatus] = useState('all');
-    const [todoArray, setTodoArray] = useState([]);
+    const [taskArray, setTaskArray] = useState([]);
 
 
     useEffect(() => {
+
         console.log(inputArray);
-        console.log(taskStatus);
+        displayHandler();
     }, [inputArray, taskStatus]);
+
+
+    // change Array based on taskStatus
+    const displayHandler = () => {
+
+        switch (taskStatus) {
+
+            case 'complete':
+                setTaskArray(inputArray.filter((item) => item.status === true));
+                break;
+            case 'pending':
+                setTaskArray(inputArray.filter((item) => item.status === false));
+                break;
+            default:
+                setTaskArray(inputArray);
+                break;
+        }
+    };
 
 
     return (
@@ -34,6 +53,8 @@ export default function Index() {
             <TodoList
                 inputArray={inputArray}
                 setInputArray={setInputArray}
+                taskStatus={taskStatus}
+                taskArray={taskArray}
             />
         </div>
     )
