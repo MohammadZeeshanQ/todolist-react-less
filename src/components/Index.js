@@ -13,7 +13,7 @@ export default function Index() {
     useEffect(() => {
 
         console.log(inputArray);
-        displayHandler();
+        displayHandler(taskStatus);
     }, [inputArray, taskStatus]);
 
 
@@ -21,7 +21,6 @@ export default function Index() {
     const displayHandler = () => {
 
         switch (taskStatus) {
-
             case 'complete':
                 setTaskArray(inputArray.filter((item) => item.status === true));
                 break;

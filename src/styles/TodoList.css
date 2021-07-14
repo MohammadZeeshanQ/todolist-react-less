@@ -1,5 +1,5 @@
 .todo-container {
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   z-index: 999;
 }
 
@@ -7,7 +7,7 @@
   background-color: #fcfcfc;
   width: 40%;
   margin: auto;
-  padding: 0.5rem 1rem;
+  padding: 0.1rem 1rem;
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
@@ -15,6 +15,17 @@
 
 .todo-text-container {
   flex-grow: 1;
+}
+
+.todo-text-header {
+  color: #2a2a72;
+  font-weight: 500;
+}
+
+.todo-text-header-done {
+  color: #2a2a72;
+  font-weight: 500;
+  text-decoration: line-through 1px #2a2a72;
 }
 
 .todo-delete-container {

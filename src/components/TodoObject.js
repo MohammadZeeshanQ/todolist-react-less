@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import '../styles/TodoList.css'
 
 
@@ -9,7 +9,6 @@ export default function TodoObject({ item, inputArray, setInputArray, taskArray 
 
     // delete Task
     const deleteHandler = () => {
-
         setInputArray(inputArray.filter((element) =>
             element.id !== item.id
         ))
@@ -18,10 +17,8 @@ export default function TodoObject({ item, inputArray, setInputArray, taskArray 
 
     // completed Task 
     const completeHandler = () => {
-
         // complete indicator
         setComplete(!complete);
-
         // change complete Status
         setInputArray(inputArray.map((element) => {
             if (element.id === item.id) {
@@ -42,9 +39,9 @@ export default function TodoObject({ item, inputArray, setInputArray, taskArray 
             <div className='todo-wrapper' >
 
                 <div className='todo-text-container'>
-                    <h4 style={{ color: '#009FFD' }}>
+                    <p className={item.status ? 'todo-text-header-done' : 'todo-text-header'}>
                         {item.text}
-                    </h4>
+                    </p>
                 </div>
 
                 <button className='todo-delete-container' onClick={deleteHandler}>
