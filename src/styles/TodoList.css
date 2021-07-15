@@ -3,6 +3,12 @@
   z-index: 999;
 }
 
+.todo-list-header {
+  text-align: center;
+  color: #fcfcfc;
+  letter-spacing: 2px;
+}
+
 .todo-wrapper {
   background-color: #fcfcfc;
   width: 40%;
@@ -18,14 +24,14 @@
 }
 
 .todo-text-header {
-  color: #2a2a72;
+  color: #cb218e;
   font-weight: 500;
 }
 
 .todo-text-header-done {
-  color: #2a2a72;
+  color: #cb218e;
   font-weight: 500;
-  text-decoration: line-through 1px #2a2a72;
+  text-decoration: line-through 2px #cb218e;
 }
 
 .todo-delete-container {
@@ -71,3 +77,11 @@
   border: none;
   cursor: pointer;
 }
+
+/*  Mdedia query Phone */
+@media screen and (max-width: 600px) {
+  .todo-wrapper {
+    width: 70%;
+  }
+}
+/*  Mdedia query Phone */

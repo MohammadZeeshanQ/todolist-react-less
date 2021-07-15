@@ -38,7 +38,7 @@ export default function Index() {
         <div className='index-container'>
 
             <div className='hero-header' style={{ textAlign: 'center', paddingTop: '4rem ', }}>
-                <h1 style={{ color: '#fcfcfc' }}>Todo List</h1>
+                <h1 style={{ color: '#fcfcfc', letterSpacing: '2px' }}>Todo List</h1>
             </div>
 
             <InputForm

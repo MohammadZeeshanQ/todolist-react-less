@@ -1,6 +1,12 @@
 .index-container {
   width: 100vw;
   padding: 0 0 35rem 0;
-  background-color: #121258;
-  background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+  background-color: #6617cb;
+  background-image: linear-gradient(315deg, #6617cb 0%, #cb218e 74%);
+}
+
+@media screen and (max-width: 600px) {
+  .index-container {
+    padding-bottom: 20rem;
+  }
 }

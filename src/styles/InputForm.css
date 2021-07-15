@@ -35,7 +35,7 @@
 .form-submit {
   font-size: 1.5rem;
   color: #fcfcfc;
-  background-color: #009ffd;
+  background-color: #cb218e;
   border: none;
   border-radius: 50%;
   padding: 0.7rem 0.9rem;
@@ -48,7 +48,7 @@
 
 .form-dropDown {
   background-color: #fcfcfc;
-  color: #2a2a72;
+  color: #cb218e;
   border-radius: 0.5rem;
   padding: 1rem;
   border: none;
@@ -59,8 +59,20 @@
   margin: 0.5rem;
 }
 
+/* Media query Phone */
 @media screen and (max-width: 600px) {
   .form-wrapper {
-    flex-direction: column;
+    display: block;
+    margin: auto;
+  }
+
+  .form-div {
+    width: 85%;
+    margin: auto;
+  }
+
+  .form-dropDown-container {
+    margin-top: 1rem;
   }
 }
+/* Media query Phone */
